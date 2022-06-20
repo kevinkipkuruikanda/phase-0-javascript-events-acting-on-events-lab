@@ -1,8 +1,31 @@
-// Your code here
-const input = document.querySelector("input");
+const dodger = document.getElementById("dodger");
 
-function addingEventListener() {
-  input.addEventListener("click", function (event) {
-    return "clicked";
-  });
+function moveDodgerLeft() {
+  const leftNumbers = dodger.style.left.replace("px", "");
+  const left = parseInt(leftNumbers, 10);
+
+  if (left > 0) {
+    dodger.style.left = `${left - 1}px`;
+  }
 }
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Arrowleft") {
+    moveDodgerLeft();
+  }
+});
+
+function moveDodgerRight() {
+  const leftNumbers = dodger.style.left.replace("px", "");
+  const left = parseInt(leftNumbers, 10);
+
+  if (left < 200) {
+    dodger.style.left = `${left + 1}px`;
+  }
+}
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Arrowleft") {
+    moveDodgerLeft();
+  }
+});
